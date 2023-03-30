@@ -1,0 +1,77 @@
+﻿@using DealerMarket.Core.Application.ViewModels.User
+@model LoginViewModel
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col col-xl-10">
+            <div class="card" style="border-radius: 1rem;">
+                <div class="row g-0">
+                    <div class="col-md-6 col-lg-5 d-none d-md-block">
+                        <img src="~/Images/DealerApp.png" alt="login img" class="SizePhoto" style="border-radius: 1rem 0 0 1rem;" />
+                    </div>
+                    <div class="col-md-6 col-lg-7 d-flex align-items-center">
+                        <div class="card-body p-4 p-lg-5 text-black">
+
+                            <form method="post" asp-controller="User" asp-action="Index">
+
+                                <div class="mb-3 pb-1">
+                                    <center><h1 class="text-center text-dark"><i>Dealer <strong class="text-danger">Market</strong> Online</i></h1></center>
+                                </div>
+
+                                <h5 class="fw-normal mb-3 pb-3 text-center" style="letter-spacing: 1px;"><i>Sign into your account to sell and Shop Cars online</i></h5>
+
+                               @* @Html.ValidationSummary(false, "", new {@class="text-danger"})*@
+
+                                @if(Model.HasError)
+                                {
+                                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                        <p>@Model.Error</p>
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                    </div>
+                                }
+
+                                <div class="mb-4">
+                                    <label asp-for="Email" class="form-label">User Name</label>
+                                    <input asp-for="Email" type="text" placeholder="User Name" class="form-control form-control-lg" />
+                                    <span asp-validation-for="Email" class="text-danger"></span>
+                                </div>
+
+                                <div class="mb-4">
+                                    <label asp-for="Password" class="form-label" for="">Password</label>
+                                    <input asp-for="Password" type="password" placeholder="Password" class="form-control form-control-lg" />
+                                    <span asp-validation-for="Password" class="text-danger"></span>
+                                </div>
+
+                                <div class="d-flex justify-content-around align-items-center mb-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" checked />
+                                        <label class="form-check-label"> Remember me </label>
+                                    </div>
+                                    <a asp-controller="User" asp-action="ForgotPassword">Forgot password?</a>
+                                </div>
+
+                                <div class="pt-1 mb-4">
+                                    <center><button type="submit" class="btn btn-outline-primary btn-lg col-6 ">Sing In</button></center>
+                                </div>
+
+                                <div class="pt-1 mb-4">
+                                    <center><p class="fw-bold mx-3 mb-0 text-muted">OR</p></center>
+                                </div>
+
+                                <div class="pt-1 mb-4">
+                                    <center><a asp-controller="User" asp-action="Register" class="btn btn-outline-danger btn-lg col-6">Register</a></center>
+                                </div>
+
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

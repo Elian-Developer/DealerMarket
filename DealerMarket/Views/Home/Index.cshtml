@@ -1,0 +1,86 @@
+﻿@using DealerMarket.Core.Application.ViewModels.Ads
+@model List<AdsViewModels>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container-fluid">
+    <div class="row mb-4">
+
+        <div class="col-4">
+            <div class="mb-1">
+
+                <form class="d-flex" role="search" method="post" asp-controller="Home" asp-action="Index">
+
+                    <input class="form-control me-2 border-danger" name="AdsName"
+                           type="search" placeholder="Search" aria-label="Search">
+
+                    <button class="btn btn-outline-danger" type="submit">Search</button>
+
+                </form>
+
+            </div>
+        </div>
+
+            <div class="col-6">
+
+                <form class="d-flex" method="post" asp-controller="Home" asp-action="Index">
+
+                <div class="col-5 offset-9 d-flex">
+                    <select class="form-select border-danger" aria-label="Default select" asp-items="@(new SelectList(ViewBag.Categories, "Id", "Name"))" name="CategoryId">
+                        <option selected>All Categories</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-outline-danger leftbutton">Filter</button>
+
+            </form>
+
+            </div>
+    </div>
+</div>
+
+
+<div class="container-fluid">
+
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+        @if (Model == null || Model.Count == 0)
+        {
+            <h3 class="text-center fw-bold">There isn't Adsverstisements yet.</h3>
+        }
+        else
+        {
+
+            foreach (AdsViewModels item in Model)
+            {
+
+                <div class="col">
+                    <a asp-controller="Home" asp-action="Details" asp-route-id="@item.Id" class="text-reset text-decoration-none">
+                        <div class="card zoom">
+                            <img class="bd-placeholder-img card-img-top" width="100" height="320" src="@item.ImageURL" />
+                            <div class="card-body">
+                                <div class="card-title fw-bold">
+                                    @item.Name - @item.CategoryName
+                                </div>
+                                <p class="card-text">@item.Description</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                    </div>
+                                    <small class="fw-bold">$ @item.Price</small>
+                                </div>
+                                @*<div>
+                        <center><a asp-controller="Home" asp-action="Details" asp-route-id="@item.Id"
+                        class="btn btn-outline-secondary">View More...</a></center>
+                        </div>*@
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+            }
+        }
+    </div>
+</div>
+

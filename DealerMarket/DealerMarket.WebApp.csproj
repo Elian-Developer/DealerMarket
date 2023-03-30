@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="6.0.13" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.14">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.14" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.14">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.12" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DealerMarket.Core.Application\DealerMarket.Core.Application.csproj" />
+    <ProjectReference Include="..\DealerMarket.Core.Domain\DealerMarket.Core.Domain.csproj" />
+    <ProjectReference Include="..\DealerMarket.Infraestructure.Identity\DealerMarket.Infraestructure.Identity.csproj" />
+    <ProjectReference Include="..\DealerMarket.Infraestructure.Persistance\DealerMarket.Infraestructure.Persistance.csproj" />
+    <ProjectReference Include="..\DealerMarket.Infraestructure.Shared\DealerMarket.Infraestructure.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\Images\Ads\" />
+  </ItemGroup>
+
+</Project>

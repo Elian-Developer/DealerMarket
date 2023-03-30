@@ -1,0 +1,85 @@
+﻿@using DealerMarket.Core.Application.Dtos.Account
+@using Microsoft.AspNetCore.Http;
+@using DealerMarket.Core.Application.Helpers
+@using DealerMarket.Core.Application.ViewModels.User
+@inject IHttpContextAccessor httpContextAccessor
+@{
+    var User = httpContextAccessor.HttpContext.Session.Get<AuthenticationResponse>("user");
+    var isAdmin = User != null ? User.Roles.Any(role => role == "Admin") : false;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Dealer Market</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/DealerMarket.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-black border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand fw-bold fst-italic text-danger offset-1" asp-area="" asp-controller="Home" asp-action="Index">Dealer Market</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        @if(User != null)
+                        {
+                             <li class="nav-item">
+                                <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index">Adverstisements</a>
+                             </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link text-white" asp-area="" asp-controller="Ads" asp-action="Index">My Adverstisements</a>
+                            </li>
+
+
+                        @if (isAdmin)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-white" asp-area="" asp-controller="Category" asp-action="Index">Categories</a>
+                            </li>
+                        }
+                            <li class="nav-item offset-5">
+                                <a class="nav-link text-white btn btn-outline-danger" asp-area="" asp-controller="User" asp-action="LogOut">Log Out</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link text-white fst-italic fw-bold">User: (@User.UserName)</a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-white" asp-area="" asp-controller="User" asp-action="Register">Register!</a>
+                            </li>
+                        }
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; @DateTime.Now.Year - DealerMarket - Elian Báez
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,22 @@
+﻿@using DealerMarket.Core.Application.ViewModels.User
+@model string
+
+@{
+    ViewData["Title"] = "Confirm Email";
+}
+
+<div class="row mt-5">
+    <div class="col-8 offset-2">
+        <div class="card shadow-sm">
+            <div class="card-body">
+
+               <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <h2>@Model</h2> - <center><a asp-controller="User" asp-action="Index" class="btn btn-outline-success justify-content-center">Sign in</a></center>
+                   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+               </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+

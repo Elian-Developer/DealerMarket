@@ -1,0 +1,47 @@
+﻿@using DealerMarket.Core.Application.ViewModels.Category
+@model SaveCategoryViewModel
+
+@{
+    var CreateMode = Model.Id == 0 ? true : false;
+    ViewData["Title"] = "SaveCategory";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-6 offset-3">
+            <div class="card border-dark">
+                <div class="card-header text-danger text-center bg-black">
+                    <h4>@(CreateMode ? $"Creating a new category" : $"Editing a Category {Model.Name}")</h4>
+                </div>
+                <div class="card-body">
+
+                    <form method="post" asp-controller="Category" asp-action="@(CreateMode ? "Create" : "Edit")">
+
+                        <div class="mb-3">
+                            <label asp-for="Name" class="form-label">Name</label>
+                            <input asp-for="Name" class="form-control" />
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Description" class="form-label">Description</label>
+                            <textarea asp-for="Description" class="form-control"></textarea>
+                            <span asp-validation-for="Description" class="text-danger"></span>
+                        </div>
+
+                        <input type="hidden" asp-for="Id" />
+
+                        <div class="float-end me-2">
+                            <button type="submit" class="btn btn-outline-success">@(CreateMode ? "Create" : "Edit")</button>
+                            <a asp-controller="Category" asp-action="Index" class="btn btn btn-outline-warning">Back</a>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

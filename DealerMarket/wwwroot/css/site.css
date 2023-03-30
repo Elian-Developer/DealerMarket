@@ -1,0 +1,32 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.height{
+    width:25em;
+    height:12em;
+}
+
+.SizePhoto {
+    width: 100%;
+    height: 100%;
+}
+
+.leftbutton{
+    margin-left: 7px;
+}
