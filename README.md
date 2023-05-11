@@ -37,39 +37,40 @@ y ***MimeKit*** para el manejo de envío de correos desde la app
 
 - ***Vista del register para crear un usuario en la app***
 
-![image - 1](https://github.com/Elian-Developer/DealerMarket/assets/107364306/bdbf0bc9-56c9-4bef-8217-d03898640442)
+![image](https://github.com/Elian-Developer/DealerMarket/assets/107364306/72573070-5516-45c8-92e6-e2f63ab3a057)
 
 - ***Ejemplo de una cuenta creada y confirmada con exito en la app***
 
-![image](https://github.com/Elian-Developer/DealerMarket/assets/107364306/6f4e1fbf-dff8-43f1-83ee-b41dbeeebfdc)
+![image](https://github.com/Elian-Developer/DealerMarket/assets/107364306/7266b685-ef2e-4954-b924-f91076c412bb)
 
-![image - 2](https://github.com/Elian-Developer/DealerMarket/assets/107364306/27c6a71a-97c6-413f-94a6-5cc99c68968c)
+![image](https://github.com/Elian-Developer/DealerMarket/assets/107364306/d3219c91-49f7-4bf7-a0ce-aeb5085ed49a)
 
 - ***Vista del login para iniciar sesion luego de haber confirmado su cuenta***
 
-![image - 3](https://github.com/Elian-Developer/DealerMarket/assets/107364306/71a7b0c2-b49d-40e1-aadc-6abe69d3fff6)
+![image](https://github.com/Elian-Developer/DealerMarket/assets/107364306/040a2184-8c5d-4a44-9fad-55fd2746ec9b)
 
 - ***Vista de "Olvidé mi contraseña."***
 
-![image - 4](https://github.com/Elian-Developer/DealerMarket/assets/107364306/ab10a13f-308d-4c65-9e4d-b6d587603254)
+![image](https://github.com/Elian-Developer/DealerMarket/assets/107364306/4b0bb801-c88c-417e-b28e-18a9724b2ce3)
 
 - ***Vista para restablecer su contraseña olvidada***
 
-![image](https://github.com/Elian-Developer/DealerMarket/assets/107364306/e17e7ece-50a9-46b5-8e8a-6614a512181b)
+![image](https://github.com/Elian-Developer/DealerMarket/assets/107364306/377f9903-bfbd-490c-b875-68fc674cd430)
 
-![image](https://github.com/Elian-Developer/DealerMarket/assets/107364306/a2f409db-6b54-4353-9311-f700a760ae07)
+![image](https://github.com/Elian-Developer/DealerMarket/assets/107364306/c41f6ba5-17cf-4713-999d-b3a1e9c18999)
 
 - ***Vista de la pagina principal de la app***
 
-![image - 6](https://github.com/Elian-Developer/DealerMarket/assets/107364306/a4799063-d358-49a8-871d-e248fab109a0)
+![image](https://github.com/Elian-Developer/DealerMarket/assets/107364306/66ced8eb-ebf1-481e-866c-a75a3d554d5d)
 
 - ***Vista de datalles al hacer clic en un anuncio***
 
-![image - 7](https://github.com/Elian-Developer/DealerMarket/assets/107364306/7ecc3697-669b-4b36-b517-807f1f559559)
+![image](https://github.com/Elian-Developer/DealerMarket/assets/107364306/b7773961-fb9e-4c9d-8592-427b5f0f74d5)
 
 - ***Vista de Mis anuncios***
 
-![image - 8](https://github.com/Elian-Developer/DealerMarket/assets/107364306/b0fb16c4-f96a-408b-b2a8-c9154dee5c16)
+![image](https://github.com/Elian-Developer/DealerMarket/assets/107364306/1b089f89-1666-4515-8f87-c33b64afb260)
+
 
 
 ## *Construido con* 🛠️
